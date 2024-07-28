@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
+
+import com.codeborne.selenide.Configuration;
 import java.time.Duration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,6 +26,7 @@ public class AlertsWindowsTests {
 
   @BeforeEach
   void setUp() {
+    Configuration.pageLoadStrategy = "eager";
     open("https://demoqa.com/alertsWindows");
     getWebDriver().manage().window().maximize();
   }
